@@ -1,0 +1,67 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "biotech-ml-toolkit"
+version = "0.1.0"
+description = "Biotech & Pharma ML Library - 26 models for chemistry, food safety, clinical diagnostics, and microbiology"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+authors = [
+    { name = "itiana" },
+]
+keywords = ["biotech", "pharma", "machine-learning", "chemistry", "clinical", "microbiology", "food-safety"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Healthcare Industry",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Topic :: Scientific/Engineering :: Chemistry",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+]
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "scikit-learn>=1.3",
+    "xgboost>=1.7",
+    "pandas>=2.0",
+    "joblib>=1.3",
+]
+
+[project.optional-dependencies]
+rdkit = ["rdkit>=2023.03"]
+spacy = ["spacy>=3.5"]
+lightgbm = ["lightgbm>=4.0"]
+duckdb = ["duckdb>=0.9"]
+prophet = ["prophet>=1.1"]
+all = [
+    "rdkit>=2023.03",
+    "spacy>=3.5",
+    "lightgbm>=4.0",
+    "duckdb>=0.9",
+    "prophet>=1.1",
+]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "ruff>=0.1",
+]
+
+[project.urls]
+Repository = "https://github.com/itiana/biotech-ml-toolkit"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/biotech_ml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 120
