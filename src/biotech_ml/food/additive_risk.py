@@ -51,10 +51,7 @@ _RISK_TO_SCORE: dict[str, float] = {
 
 
 class AdditiveRiskScorer(BaseModel):
-    """Scores additive combinations for anomaly / risk using Isolation Forest.
-
-    Falls back to knowledge-base scoring when IF model is not available.
-    """
+    """Scores additive combinations for anomaly / risk using Isolation Forest."""
 
     def __init__(self) -> None:
         super().__init__()

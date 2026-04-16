@@ -1,8 +1,4 @@
-"""Microbiology Question-Answering using BM25 retrieval.
-
-Uses BM25Index from features/text.py to search a pre-built microbiology
-QA corpus and return ranked answers with scores and source references.
-"""
+"""Microbiology QA using BM25 retrieval over a pre-built corpus."""
 
 import logging
 from pathlib import Path

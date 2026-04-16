@@ -70,11 +70,7 @@ def _build_compiled_patterns() -> list[tuple[re.Pattern[str], str]]:
 
 
 class AllergenNER(BaseModel):
-    """Detects Big 9 allergens in ingredient text.
-
-    Uses a spaCy NER model when available, falls back to rule-based
-    regex matching.
-    """
+    """Detects Big 9 allergens in ingredient text."""
 
     def __init__(self) -> None:
         super().__init__()

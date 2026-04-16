@@ -70,11 +70,7 @@ def _score_to_grade(score: int) -> str:
 
 
 class NutriScorePredictor(BaseModel):
-    """Predicts Nutri-Score grade (A-E) using an XGBoost classifier.
-
-    Falls back to deterministic rule-based scoring when model artifact is
-    not available.
-    """
+    """Predicts Nutri-Score grade (A-E) using an XGBoost classifier."""
 
     def __init__(self) -> None:
         super().__init__()

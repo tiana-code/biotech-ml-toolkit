@@ -1,8 +1,4 @@
-"""Antimicrobial Susceptibility Testing (AST) predictor.
-
-Uses XGBoost binary classifiers per organism-antibiotic pair with a general
-fallback model. Predicts R/S/I with confidence and breakpoint source.
-"""
+"""AST predictor - XGBoost classifiers per organism-antibiotic pair, predicts R/S/I."""
 
 import logging
 from pathlib import Path

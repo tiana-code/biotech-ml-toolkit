@@ -68,11 +68,7 @@ def _classify_by_keywords(text: str) -> tuple[bool, str, float]:
 
 
 class HACCPClassifier(BaseModel):
-    """Classifies text for HACCP hazard categories using TF-IDF + LightGBM.
-
-    Falls back to keyword-based classification when model artifact
-    is unavailable.
-    """
+    """Classifies text for HACCP hazard categories using TF-IDF + LightGBM."""
 
     def __init__(self) -> None:
         super().__init__()

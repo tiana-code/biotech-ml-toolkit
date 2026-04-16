@@ -81,12 +81,7 @@ def _parse_single_ingredient(raw: str) -> dict[str, Any]:
 
 
 class IngredientNER(BaseModel):
-    """Ingredient text parser with optional spaCy NER backend.
-
-    Parses raw ingredient text into structured ingredients with quantities,
-    units, and percentages. Falls back to rule-based regex parsing when
-    spaCy is not available.
-    """
+    """Ingredient text parser with optional spaCy NER backend."""
 
     def __init__(self) -> None:
         super().__init__()

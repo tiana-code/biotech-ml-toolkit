@@ -11,8 +11,6 @@ logger = logging.getLogger(__name__)
 
 @dataclass(slots=True)
 class TrainingBundle:
-    """Data bundle passed between training pipeline steps."""
-
     train_features: Any
     train_targets: Any
     validation_features: Any | None = None
@@ -33,21 +31,17 @@ class BaseTrainer(ABC):
 
     @abstractmethod
     def prepare_data(self) -> TrainingBundle:
-        """Load and prepare training data. Returns a TrainingBundle."""
         ...
 
     @abstractmethod
     def train(self, bundle: TrainingBundle) -> dict[str, Any]:
-        """Train the model on the prepared bundle. Returns a metrics dict."""
         ...
 
     @abstractmethod
     def save_artifacts(self) -> None:
-        """Persist trained model and related artifacts to disk."""
         ...
 
     def run(self) -> dict[str, Any]:
-        """Execute the full training pipeline."""
         logger.info("[%s] Preparing data...", self.__class__.__name__)
         bundle = self.prepare_data()
 
