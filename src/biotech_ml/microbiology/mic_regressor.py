@@ -1,8 +1,4 @@
-"""Minimum Inhibitory Concentration (MIC) regressor.
-
-Uses LightGBM regression to predict MIC values on a log2 scale, then
-interprets the result using EUCAST/CLSI breakpoint tables.
-"""
+"""MIC regressor - LightGBM on log2 scale with EUCAST/CLSI breakpoint interpretation."""
 
 import logging
 import math

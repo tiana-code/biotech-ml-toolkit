@@ -40,11 +40,7 @@ _IF_FEATURES = ["energy", "protein", "fat", "carbohydrates", "sugar", "fiber", "
 
 
 class NutritionalAnomalyDetector(BaseModel):
-    """Detects anomalies in nutrient test results.
-
-    Uses an Isolation Forest model on standardized nutrient profiles, with
-    reference-range fallback when the IF artifact is unavailable.
-    """
+    """Detects anomalous nutrient profiles using Isolation Forest + reference ranges."""
 
     def __init__(self) -> None:
         super().__init__()

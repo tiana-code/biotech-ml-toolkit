@@ -1,8 +1,4 @@
-"""Phenotype predictor from genomic features.
-
-Uses XGBoost multi-label classifier to predict phenotypic traits
-(resistance markers, virulence, metabolism) from genomic feature vectors.
-"""
+"""Phenotype predictor - XGBoost multi-label classifier from genomic feature vectors."""
 
 import logging
 from pathlib import Path

@@ -12,10 +12,7 @@ logger = logging.getLogger(__name__)
 
 
 class ProductLookup(BaseModel):
-    """Looks up product data by barcode using DuckDB over OpenFoodFacts Parquet.
-
-    If Parquet files are not available, returns a not-found response.
-    """
+    """Looks up product data by barcode using DuckDB over OpenFoodFacts Parquet."""
 
     def __init__(self) -> None:
         super().__init__()

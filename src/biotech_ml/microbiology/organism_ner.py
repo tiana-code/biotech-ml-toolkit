@@ -1,9 +1,4 @@
-"""Organism Named Entity Recognition (NER).
-
-Uses spaCy EntityRuler (rule-based) for extracting organism names from
-clinical microbiology text. Supports full binomial names, abbreviations,
-and common acronyms (MRSA, VRE, etc.).
-"""
+"""Organism NER using spaCy EntityRuler - binomial names, abbreviations, and acronyms (MRSA, VRE)."""
 
 import logging
 from pathlib import Path
