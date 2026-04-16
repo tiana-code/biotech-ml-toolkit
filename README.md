@@ -37,58 +37,6 @@ Built for LIMS integration, drug discovery pipelines, food safety compliance, an
 | 25 | Features | `molecular.py` | RDKit | Morgan/MACCS fingerprints, descriptors |
 | 26 | Features | `genomic.py` | scikit-learn | K-mer vectors, GC content |
 
-## Architecture
-
-```mermaid
-graph TD
-    subgraph biotech_ml
-        B[BaseModel] --> C[Chemistry]
-        B --> F[Food]
-        B --> M[Medical]
-        B --> Micro[Microbiology]
-        
-        C --> C1[ToxicityScorer]
-        C --> C2[SolubilityPredictor]
-        C --> C3[LipophilicityPredictor]
-        C --> C4[AllergenDetector]
-        C --> C5[GHSClassifier]
-        C --> C6[INCISafetyScorer]
-        
-        F --> F1[NutriScorePredictor]
-        F --> F2[AllergenNER]
-        F --> F3[AdditiveRiskScorer]
-        F --> F4[HACCPClassifier]
-        F --> F5[IngredientNER]
-        F --> F6[NutritionalAnomalyDetector]
-        F --> F7[ProductLookup]
-        
-        M --> M1[ResultAnomalyDetector]
-        M --> M2[DeltaChecker]
-        M --> M3[DrugLabInteraction]
-        M --> M4[ClinicalQA]
-        M --> M5[DDxSuggester]
-        M --> M6[TerminologyMapper]
-        
-        Micro --> U1[ASTPredictor]
-        Micro --> U2[MICRegressor]
-        Micro --> U3[PhenotypePredictor]
-        Micro --> U4[OrganismNER]
-        Micro --> U5[MicrobiologyQA]
-    end
-    
-    subgraph Features
-        FMol[molecular.py<br>RDKit fingerprints]
-        FTxt[text.py<br>TF-IDF & BM25]
-        FTab[tabular.py<br>normalization]
-        FGen[genomic.py<br>k-mers]
-    end
-    
-    C1 & C2 & C3 & C5 --> FMol
-    M3 & M4 & M6 & Micro --> FTxt
-    M1 & M2 --> FTab
-    Micro --> FGen
-```
-
 ## Installation
 
 ```bash
